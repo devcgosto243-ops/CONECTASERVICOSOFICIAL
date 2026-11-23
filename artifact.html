@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Primary -->
+  <title>Conecta Serviços | Agilidade, Confiança e Praticidade em Um Só Lugar</title>
+  <meta name="description" content="Pague contas, faça recargas de celular e receba atendimento Neoenergia com rapidez e sem filas na Conecta Serviços!" />
+  <meta name="keywords" content="Conecta Serviços, pagamento de contas, recarga de celular, atendimento Neoenergia, correspondente bancario" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Conecta Serviços | Tudo o que você precisa em um só lugar" />
+  <meta property="og:description" content="Agilidade, confiança e praticidade. Pague suas contas, recarregue seu celular e resolva pendências sem complicação." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0a67d577c773?w=1200" />
+
+  <!-- Fonts: Plus Jakarta Sans (Títulos) & Inter (Corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Conecta Serviços",
+    "image": "https://images.unsplash.com/photo-1556742049-0a67d577c773?w=800",
+    "description": "Ponto de atendimento para pagamento de contas, recargas e atendimento parceiro Neoenergia.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Exemplo, 123",
+      "addressLocality": "Sua Cidade",
+      "addressRegion": "BA",
+      "postalCode": "00000-000",
+      "addressCountry": "BR"
+    },
+    "telephone": "+5575999517936",
+    "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
+    "sameAs": [
+      "https://instagram.com/conectaservicos2"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ==================================================
+       1. VARIÁVEIS CSS (TEMA CLARO E ESCURO)
+       ================================================== */
+    :root {
+      /* Tema Claro (Default) */
+      --bg-main: #F6F9F7;
+      --green-deep: #0A3D2C;
+      --green-deep-rgb: 10, 61, 44;
+      --green-vivid: #22C55E;
+      --amber: #F59E0B;
+      --amber-hover: #D97706;
+      --text-dark: #12261D;
+      --text-muted: #5B6B63;
+      --white: #FFFFFF;
+
+      /* Glassmorphic Elements (Light) */
+      --glass-bg: rgba(255, 255, 255, 0.55);
+      --glass-bg-hover: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.75);
+      --glass-shadow: 0 20px 40px -15px rgba(10, 61, 44, 0.06);
+
+      --nav-bg: rgba(255, 255, 255, 0.65);
+      --nav-border: rgba(255, 255, 255, 0.85);
+
+      --card-title: #0A3D2C;
+      --blob-opacity: 0.35;
+
+      /* Escuros Internos */
+      --glass-dark-bg: rgba(255, 255, 255, 0.08);
+      --glass-dark-border: rgba(255, 255, 255, 0.18);
+
+      /* Typography */
+      --font-title: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* Spacing & Layout */
+      --container-max: 1100px;
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 32px;
+      --radius-pill: 9999px;
+      --transition-base: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Tema Escuro OVERRIDE */
+    [data-theme="dark"] {
+      --bg-main: #07120E;
+      --green-deep: #22C55E;
+      --text-dark: #ECFDF5;
+      --text-muted: #94A3B8;
+
+      /* Glassmorphic Elements (Dark) */
+      --glass-bg: rgba(15, 30, 24, 0.55);
+      --glass-bg-hover: rgba(22, 45, 36, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+
+      --nav-bg: rgba(9, 23, 17, 0.75);
+      --nav-border: rgba(255, 255, 255, 0.12);
+
+      --card-title: #F0FDF4;
+      --blob-opacity: 0.22;
+
+      --glass-dark-bg: rgba(0, 0, 0, 0.25);
+      --glass-dark-border: rgba(255, 255, 255, 0.12);
+    }
+
+    /* ==================================================
+       2. RESET & ESTILOS BASE
+       ================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-title);
+      letter-spacing: -0.02em;
+      color: var(--card-title);
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-base);
+    }
+
+    /* Barra de progresso de rolagem */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--amber);
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* Background Ambient Blobs */
+    .blob-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(110px);
+      opacity: var(--blob-opacity);
+      animation: floatBlob 22s infinite alternate ease-in-out;
+      transition: opacity 0.4s ease;
+    }
+
+    .blob-1 {
+      top: -10%;
+      left: -5%;
+      width: 550px;
+      height: 550px;
+      background: var(--green-vivid);
+    }
+
+    .blob-2 {
+      top: 40%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: rgba(245, 158, 11, 0.45);
+      animation-delay: -5s;
+    }
+
+    .blob-3 {
+      bottom: -10%;
+      left: 20%;
+      width: 550px;
+      height: 550px;
+      background: rgba(34, 197, 94, 0.35);
+      animation-delay: -10s;
+    }
+
+    @keyframes floatBlob {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 60px) scale(1.1); }
+    }
+
+    /* Class Utilitárias */
+    .container {
+      width: 90%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .section-padding {
+      padding: 130px 0;
+    }
+
+    .text-center { text-align: center; }
+    
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 50px auto;
+    }
+
+    /* Glassmorphism Card */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      transition: var(--transition-base);
+    }
+
+    @supports not (backdrop-filter: blur(18px)) {
+      .glass-card {
+        background: rgba(255, 255, 255, 0.94);
+      }
+      [data-theme="dark"] .glass-card {
+        background: rgba(15, 30, 24, 0.95);
+      }
+    }
+
+    .glass-card:hover {
+      background: var(--glass-bg-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Botões */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: var(--transition-base);
+      border: none;
+      min-height: 48px;
+    }
+
+    .btn-primary {
+      background-color: var(--amber);
+      color: #FFFFFF;
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--amber-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.5);
+    }
+
+    .btn-glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      color: var(--text-dark);
+    }
+
+    .btn-glass:hover {
+      background: var(--glass-bg-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Botão Toggle de Tema */
+    .theme-toggle-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-base);
+      flex-shrink: 0;
+    }
+
+    .theme-toggle-btn:hover {
+      transform: rotate(15deg) scale(1.05);
+      color: var(--amber);
+    }
+
+    /* ==================================================
+       3. HEADER (Navegação Pílula Flutuante)
+       ================================================== */
+    .header-wrapper {
+      position: fixed;
+      top: 20px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      width: 100%;
+      max-width: var(--container-max);
+      height: 64px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: var(--radius-pill);
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid var(--nav-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: var(--transition-base);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: #0A3D2C;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-icon::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--amber);
+      border-radius: 50%;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+    }
+
+    .brand-logo span span {
+      color: var(--amber);
+      font-weight: 800;
+      font-size: 0.75rem;
+      display: block;
+      letter-spacing: 0.05em;
+      margin-top: -4px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .nav-links a:hover {
+      color: var(--amber);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-dark);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* Painel Mobile Fullscreen */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-main);
+      backdrop-filter: blur(25px);
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-base);
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--card-title);
+    }
+
+    /* ==================================================
+       4. HERO SECTION
+       ================================================== */
+    .hero {
+      padding-top: 180px;
+      padding-bottom: 90px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 40px auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 70px;
+      flex-wrap: wrap;
+    }
+
+    .floating-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-micro-card {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+      animation: floatCard 4s ease-in-out infinite alternate;
+    }
+
+    .hero-micro-card:nth-child(2) { animation-delay: -1.3s; }
+    .hero-micro-card:nth-child(3) { animation-delay: -2.6s; }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .micro-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(34, 197, 94, 0.15);
+      color: #22C55E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .micro-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+
+    /* ==================================================
+       5. SERVIÇOS
+       ================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--card-title);
+      margin-top: auto;
+    }
+
+    .service-link:hover {
+      color: var(--amber);
+      gap: 12px;
+    }
+
+    /* ==================================================
+       6. COMO FUNCIONA (Seção Destaque Escura)
+       ================================================== */
+    .how-it-works-section {
+      background-color: #0A3D2C;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      margin: 40px auto;
+      padding: 90px 40px;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .how-it-works-section .section-title {
+      color: #FFFFFF;
+    }
+    
+    .how-it-works-section .eyebrow { 
+      color: var(--amber); 
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .step-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+    }
+
+    .step-number {
+      font-family: var(--font-title);
+      font-size: 3.25rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.3);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .step-card h3 {
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.925rem;
+    }
+
+    /* ==================================================
+       7. SOBRE NÓS
+       ================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+    }
+
+    .about-image-frame img {
+      border-radius: calc(var(--radius-lg) - 8px);
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .values-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .value-box {
+      padding: 20px 12px;
+      text-align: center;
+      border-radius: var(--radius-sm);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+    }
+
+    .value-box i {
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+
+    .value-box h5 {
+      font-size: 0.9rem;
+    }
+
+    /* ==================================================
+       8. PERGUNTAS FREQUENTES (FAQ)
+       ================================================== */
+    .faq-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+    }
+
+    .faq-button {
+      width: 100%;
+      padding: 24px 30px;
+      text-align: left;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--card-title);
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      color: var(--text-dark);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--amber);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+      padding: 0 30px;
+    }
+
+    .faq-item.active .faq-content {
+      max-height: 200px;
+      padding-bottom: 24px;
+    }
+
+    .faq-content p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ==================================================
+       9. CHAMADA FINAL & CONTATO
+       ================================================== */
+    .final-cta {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(245, 158, 11, 0.12) 100%);
+      padding: 80px 40px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .contact-info {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .info-item i {
+      color: var(--amber);
+      margin-top: 4px;
+    }
+
+    .map-container {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      min-height: 350px;
+      box-shadow: var(--glass-shadow);
+      border: 1px solid var(--glass-border);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==================================================
+       10. RODAPÉ
+       ================================================== */
+    footer {
+      background-color: #061A13;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 80px 0 30px 0;
+      font-size: 0.9rem;
+      transition: background-color 0.4s ease;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand h4 {
+      color: #FFFFFF;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-links h5 {
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-disclaimer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* ==================================================
+       11. WHATSAPP FLUTUANTE & VOLTAR AO TOPO
+       ================================================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 990;
+      transition: var(--transition-base);
+      animation: pulseWhatsapp 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    @keyframes pulseWhatsapp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 72px;
+      background: #0A3D2C;
+      color: white;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-base);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .whatsapp-tooltip.visible {
+      opacity: 1;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-base);
+      z-index: 900;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Animação Reveal ao Rolar */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ACCESSIBILITY: Prefers Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ==================================================
+       12. RESPONSIVIDADE (MOBILE-FIRST BREAKPOINTS)
+       ================================================== */
+    @media (max-width: 992px) {
+      .services-grid,
+      .steps-grid,
+      .floating-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-grid,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .section-padding {
+        padding: 80px 0;
+      }
+      .how-it-works-section {
+        padding: 60px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Progresso de Rolagem -->
+  <div id="scroll-progress"></div>
+
+  <!-- Ambient Animated Blobs -->
+  <div class="blob-container">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#" class="brand-logo">
+  <img src="logo.png" alt="Conecta Serviços" style="height: 40px; max-height: 40px; width: auto; display: block;">
+</a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <!-- BOTÃO TOGGLE TEMA -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar Tema Claro/Escuro" title="Alternar Tema">
+          <i data-lucide="moon" id="themeIcon" style="width: 20px; height: 20px;"></i>
+        </button>
+
+        <button class="btn btn-primary" onclick="abrirWhatsApp('Olá! Vim pelo site e gostaria de tirar uma dúvida.')" style="padding: 10px 20px; font-size: 0.875rem;">
+          <i data-lucide="phone-call" style="width: 16px; height: 16px;"></i> WhatsApp
+        </button>
+
+        <button class="mobile-toggle" id="menuOpenBtn" aria-label="Abrir Menu">
+          <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAINEL MOBILE FULLSCREEN -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-toggle" id="menuCloseBtn" aria-label="Fechar Menu" style="position: absolute; top: 30px; right: 30px;">
+      <i data-lucide="x" style="width: 32px; height: 32px;"></i>
+    </button>
+    <a href="#inicio" onclick="closeMobileMenu()">Início</a>
+    <a href="#servicos" onclick="closeMobileMenu()">Serviços</a>
+    <a href="#sobre" onclick="closeMobileMenu()">Sobre</a>
+    <a href="#contato" onclick="closeMobileMenu()">Contato</a>
+    <button class="btn btn-primary" onclick="abrirWhatsApp('Olá! Vim pelo site mobile.')" style="margin-top: 20px;">
+      Falar no WhatsApp
+    </button>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero container">
+      <span class="eyebrow reveal">Conveniência & Rapidez</span>
+      <h1 class="hero-title reveal">Tudo o que você precisa, em um só lugar.</h1>
+      <p class="hero-subtitle reveal">Contas, boletos, recargas e atendimento Neoenergia com agilidade e confiança total para o seu dia a dia.</p>
+      
+      <div class="hero-buttons reveal">
+        <button class="btn btn-primary" onclick="abrirWhatsApp('Olá! Gostaria de atendimento rápido.')">
+          <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i> Chamar no WhatsApp
+        </button>
+        <a href="#servicos" class="btn btn-glass">
+          Ver serviços <i data-lucide="arrow-down" style="width: 16px; height: 16px;"></i>
+        </a>
+      </div>
+
+      <!-- 3 Micro-Cards Flutuantes -->
+      <div class="floating-cards-grid reveal">
+        <div class="glass-card hero-micro-card">
+          <div class="micro-icon"><i data-lucide="file-text"></i></div>
+          <div class="micro-text">Pagamento de Contas e Boletos</div>
+        </div>
+        <div class="glass-card hero-micro-card">
+          <div class="micro-icon"><i data-lucide="smartphone"></i></div>
+          <div class="micro-text">Recarga de Celular Multioperações</div>
+        </div>
+        <div class="glass-card hero-micro-card">
+          <div class="micro-icon"><i data-lucide="zap"></i></div>
+          <div class="micro-text">Atendimento Parceiro Neoenergia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section-padding container">
+      <div class="text-center reveal">
+        <span class="eyebrow">SERVIÇOS</span>
+        <h2 class="section-title">Resolva tudo com a gente</h2>
+        <p class="section-desc">Economize tempo resolvendo suas pendências essenciais no mesmo local com segurança.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="glass-card service-card reveal">
+          <div>
+            <div class="service-icon-box">
+              <i data-lucide="receipt" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3>Pagamento de Contas</h3>
+            <p>Quite seus boletos, contas de água, luz, internet e taxas com rapidez, sem filas e com comprovante em mãos.</p>
+          </div>
+          <a href="#" onclick="abrirWhatsApp('Olá! Vim pelo site e gostaria de pagar uma conta/boleto.'); return false;" class="service-link">
+            Solicitar pelo WhatsApp <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card service-card reveal">
+          <div>
+            <div class="service-icon-box">
+              <i data-lucide="phone-call" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3>Recargas de Celular</h3>
+            <p>Créditos para todas as operadoras (Claro, Vivo, TIM, Oi) em poucos segundos. Não fique desconectado.</p>
+          </div>
+          <a href="#" onclick="abrirWhatsApp('Olá! Vim pelo site e gostaria de fazer uma recarga de celular.'); return false;" class="service-link">
+            Fazer recarga agora <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card service-card reveal">
+          <div>
+            <div class="service-icon-box">
+              <i data-lucide="bolt" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3>Atendimento Neoenergia</h3>
+            <p>Emissão de segunda via, orientações, informações sobre débitos e serviços parceiros credenciados.</p>
+          </div>
+          <a href="#" onclick="abrirWhatsApp('Olá! Vim pelo site e preciso de atendimento Neoenergia.'); return false;" class="service-link">
+            Consultar atendimento <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="container">
+      <div class="how-it-works-section reveal">
+        <div class="text-center">
+          <span class="eyebrow">PASSO A PASSO</span>
+          <h2 class="section-title">Como funciona o atendimento</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Chame no WhatsApp</h3>
+            <p>Clique em qualquer botão do site para iniciar uma conversa direta conosco.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Diga o que precisa</h3>
+            <p>Envie o boleto, número do celular ou sua solicitação referente à Neoenergia.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Seja atendido rapidamente</h3>
+            <p>Concluímos o seu pedido de forma ágil, transparente e totalmente segura.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE NÓS -->
+    <section id="sobre" class="section-padding container">
+      <div class="about-image-frame reveal">
+          <!-- Foto da fachada -->
+          <img src="fachada.jpg" alt="Fachada Conecta Serviços" loading="lazy" />
+        </div>
+
+        <div class="reveal">
+          <span class="eyebrow">SOBRE NÓS</span>
+          <h2 class="section-title">Seu ponto de apoio diário na cidade</h2>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">
+            A <strong>Conecta Serviços</strong> nasceu com a missão de simplificar sua rotina. Unimos diversos serviços essenciais em um único local, garantindo um atendimento humano, rápido e descomplicado.
+          </p>
+
+          <div class="values-list">
+            <div class="value-box">
+              <i data-lucide="zap"></i>
+              <h5>Agilidade</h5>
+            </div>
+            <div class="value-box">
+              <i data-lucide="shield-check"></i>
+              <h5>Confiança</h5>
+            </div>
+            <div class="value-box">
+              <i data-lucide="smile"></i>
+              <h5>Praticidade</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES (FAQ) -->
+    <section class="section-padding container">
+      <div class="text-center reveal">
+        <span class="eyebrow">DÚVIDAS</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="faq-wrapper reveal">
+        <div class="glass-card faq-item">
+          <button class="faq-button">
+            Qual o horário de funcionamento?
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Atendemos de Segunda a Sexta das 08h às 18h e aos Sábados das 08h às 12h.</p>
+          </div>
+        </div>
+
+        <div class="glass-card faq-item">
+          <button class="faq-button">
+            Quais formas de pagamento são aceitas?
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Aceitamos Pix, cartões de débito, crédito e dinheiro em espécie.</p>
+          </div>
+        </div>
+
+        <div class="glass-card faq-item">
+          <button class="faq-button">
+            Quais operadoras de celular posso recarregar?
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Realizamos recargas para todas as operadoras nacionais: Vivo, Claro, TIM e Oi.</p>
+          </div>
+        </div>
+
+        <div class="glass-card faq-item">
+          <button class="faq-button">
+            Como funciona o atendimento Neoenergia?
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-content">
+            <p>Somos um ponto parceiro credenciado. Auxiliamos na emissão de 2ª via de faturas, verificação de débitos e orientações de atendimento sem fila.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMADA FINAL -->
+    <section class="container reveal">
+      <div class="glass-card final-cta">
+        <h2 class="section-title">Precisa de ajuda? Fale com a Conecta.</h2>
+        <p class="section-desc" style="margin-bottom: 30px;">Estamos prontos para te atender e resolver suas pendências com a máxima velocidade.</p>
+        <button class="btn btn-primary" onclick="abrirWhatsApp('Olá! Preciso de ajuda com um serviço.')" style="font-size: 1.1rem; padding: 16px 36px;">
+          <i data-lucide="message-circle"></i> Iniciar Atendimento Agora
+        </button>
+      </div>
+    </section>
+
+    <!-- CONTATO E MAPA -->
+    <section id="contato" class="section-padding container">
+      <div class="contact-grid">
+        <div class="glass-card contact-info reveal">
+          <div>
+            <span class="eyebrow">LOCALIZAÇÃO & CONTATO</span>
+            <h2 class="section-title" style="font-size: 2rem;">Venha nos visitar</h2>
+
+            <div class="info-item">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Endereço:</strong><br />
+                Rua Exemplo, 123 - Centro<br />
+                Sua Cidade - BA
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i data-lucide="phone"></i>
+              <div>
+                <strong>WhatsApp:</strong><br />
+                <a href="#" onclick="abrirWhatsApp('Olá!'); return false;" style="text-decoration: underline;">(75) 99951-7936</a>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i data-lucide="clock"></i>
+              <div>
+                <strong>Horários:</strong><br />
+                Segunda a Sexta: 08h às 18h<br />
+                Sábado: 08h às 12h
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i data-lucide="instagram"></i>
+              <div>
+                <strong>Instagram:</strong><br />
+                <a href="https://instagram.com/conectaservicos2" target="_blank" style="text-decoration: underline;">@conectaservicos2</a>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" onclick="abrirWhatsApp('Olá! Gostaria de saber como chegar à loja.')">
+            <i data-lucide="navigation"></i> Falar no WhatsApp
+          </button>
+        </div>
+
+        <div class="map-container reveal">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.97345876358!2d-38.9667!3d-12.2667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDE2JzAwLjAiUyAzOMKwNTgnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Conecta Serviços</h4>
+          <p>Agilidade, confiança e praticidade para você resolver suas pendências com tranquilidade no mesmo lugar.</p>
+        </div>
+
+        <div class="footer-links">
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Redes & Contato</h5>
+          <ul>
+            <li><a href="https://instagram.com/conectaservicos2" target="_blank">Instagram (@conectaservicos2)</a></li>
+            <li><a href="#" onclick="abrirWhatsApp('Olá!'); return false;">WhatsApp: (75) 99951-7936</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <p style="margin-bottom: 8px;">Ponto de atendimento parceiro. Neoenergia é marca registrada de seus respectivos proprietários.</p>
+        <p>&copy; 2026 Conecta Serviços. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="#" onclick="abrirWhatsApp('Olá! Vim pelo site e preciso de atendimento.'); return false;" class="whatsapp-float" aria-label="Atendimento via WhatsApp">
+    <i data-lucide="message-circle" style="width: 32px; height: 32px;"></i>
+    <span class="whatsapp-tooltip" id="waTooltip">Fale com a gente</span>
+  </a>
+
+  <!-- VOLTAR AO TOPO -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <i data-lucide="arrow-up" style="width: 20px; height: 20px;"></i>
+  </button>
+
+  <!-- ==================================================
+     13. JAVASCRIPT REUTILIZÁVEL E LÓGICA DE INTERAÇÃO
+     ================================================== -->
+  <script>
+    // ----------------------------------------------------
+    // CONSTANTE DO WHATSAPP ATUALIZADA (DDD 75 + NÚMERO)
+    // ----------------------------------------------------
+    const WHATSAPP_NUMBER = "5575999517936"; 
+
+    /**
+     * Função global para abrir o WhatsApp diretamente
+     */
+    function abrirWhatsApp(mensagem) {
+      const textoFormatado = encodeURIComponent(mensagem);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${textoFormatado}`;
+      window.open(url, '_blank');
+    }
+
+    // Inicialização dos Ícones Lucide
+    lucide.createIcons();
+
+    // ----------------------------------------------------
+    // LÓGICA DE TEMA ESCURO / CLARO (DARK MODE)
+    // ----------------------------------------------------
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'dark');
+        themeIcon.setAttribute('data-lucide', 'sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        htmlElement.setAttribute('data-theme', 'light');
+        themeIcon.setAttribute('data-lucide', 'moon');
+        localStorage.setItem('theme', 'light');
+      }
+      lucide.createIcons();
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // ----------------------------------------------------
+    // BARRA DE PROGRESSO & NAVBAR SCROLL
+    // ----------------------------------------------------
+    const progressBar = document.getElementById('scroll-progress');
+    const navbar = document.getElementById('navbar');
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      
+      progressBar.style.width = scrolled + '%';
+
+      if (winScroll > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ----------------------------------------------------
+    // MENU MOBILE
+    // ----------------------------------------------------
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOpenBtn = document.getElementById('menuOpenBtn');
+    const menuCloseBtn = document.getElementById('menuCloseBtn');
+
+    menuOpenBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    menuCloseBtn.addEventListener('click', closeMobileMenu);
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+    }
+
+    // ----------------------------------------------------
+    // ACORDEÃO FREQUENTE (FAQ)
+    // ----------------------------------------------------
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-button');
+      btn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(el => el.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // ----------------------------------------------------
+    // INTERSECTION OBSERVER (ANIMAÇÕES DE ROLAGEM)
+    // ----------------------------------------------------
+    const observerOptions = {
+      threshold: 0.12
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ----------------------------------------------------
+    // TOOLTIP DO WHATSAPP (APARECE APÓS 2s)
+    // ----------------------------------------------------
+    setTimeout(() => {
+      const tooltip = document.getElementById('waTooltip');
+      if (tooltip) tooltip.classList.add('visible');
+    }, 2000);
+  </script>
+</body>
+</html>
